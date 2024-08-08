@@ -9,30 +9,18 @@ client
 // send http request    
 url : http://localhost:8080/students
 type :  get post patch put delete
-body : {
-
-id;1,
-name: hosam}
+body :
 headers:
 
         stategy 1: best
         http://localhost:8080/student      get  --> get all students
         http://localhost:8080/student     post --> add student   --> body 
         http://localhost:8080/student     patch --> upadte Student --> body
-        http://localhost:8080/student     delete -->delete Student --> body
+         http://localhost:8080/student     delete -->delete Student --> body
         http://localhost:8080/department  get --> get lalll departments
 
 
-        stategy2: Error Logic
-        http://localhost:8080/student	    	 post   --> update   -> body
-        http://localhost:8080/studen	  	 post   --> add
-        http://localhost:8080/student    	 get   --> get
-
-
-
-
-
-        stategy2: To sove but not Error
+        stategy2:
         http://localhost:8080/student/update    post   --> update   -> body
         http://localhost:8080/student/add       post   --> add
         http://localhost:8080/student    get   --> get
@@ -53,7 +41,7 @@ localhost:8081/login  post --> authentication
                                 
 
 
-server  (restful api)   express
+server  (restfull api)   express
 
 Model -> controller-> route
 
@@ -66,3 +54,69 @@ Controller Folder:   crud operations
 Routes :  requset data endpoints 
             js files route for ech collection
 
+
+
+
+// Data sent from a client in request Object
+
+//1- url  Query String    url?id=2&name=xxx
+     method : get,post, patch ,put , delete
+
+//2- url  Parameters   url/2/xxx   
+    method : get,post, patch ,put , delete
+
+//3- http body
+     method: post, patch ,put , delete
+
+
+
+/*************************************
+Database Connection  
+
+any backends  c# --> SQLServer 
+               1- Driver SQLServer (code sql server)  "select * from students"
+               2- ORM object ralational mapper findAll findOne
+               2-  A-  DataBase First 
+                   B- Empty Model First
+
+MongoDB   noSql        
+Sql server , mySql  SQL
+
+               Nodejs --> MongoDB
+               1- driver mongoDB
+               2- ODM Object Document Mapper  
+
+
+
+1-  install mongoose
+2- app.js   mongoose open connection local mongoDB 
+3- Model Folder  schema for each collection
+4- Controller crud operation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mongoose
