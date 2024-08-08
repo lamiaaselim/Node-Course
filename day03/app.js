@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+
 const stdRouter = require("./routes/stdRoute");
 
 const server = express();
@@ -18,6 +19,7 @@ server.use((request, repsonse, next) => {
 //********************* routes***********************/
 
 // server.use();
+server.use(express.json());
 server.use(stdRouter);
 
 /*****************************************************/

@@ -1,11 +1,11 @@
 const express = require("express");
-
+const bodyParser = require("body-parser");
 // // express has a method called route that creates a route object
 
 const router = express.Router();
+bodyParser.json();
 
 const controller = require("./../Controller/stdController");
-
 
 // // // // Case : 1 => modify server
 // server.get("/student", (req, res) => {
@@ -85,13 +85,44 @@ const controller = require("./../Controller/stdController");
 //   .patch(controller.updateStudent)
 //   .delete(controller.deleteStudent);
 
+// // // use colon : to send parameters and make it optional
+// router
+//   .route("/student/:id?")
+//   .get(controller.getAllStudents)
+//   .post(controller.addStudent)
+//   .patch(controller.updateStudent)
+//   .delete(controller.deleteStudent);
 
-// // use colon : to send parameters and make it optional
+// router
+//   .route("/student")
+//   .get(controller.getAllStudents)
+//   .post(controller.addStudent)
+//   .patch(controller.updateStudent);
+
+// router.get("/student/:id", controller.getStudentById);
+// router.delete("/student/:id", controller.deleteStudent);
+
+// router
+//   .route("/student")
+//   .get(controller.getAllStudents)
+//   .post(controller.addStudent)
+//   .patch(controller.updateStudent);
+
+// router
+//   .route("/student")
+//   .get(controller.getAllStudents)
+//   .post(express.json(), controller.addStudent)
+//   .patch(controller.updateStudent);
+
 router
-  .route("/student/:id?")
+  .route("/student")
   .get(controller.getAllStudents)
   .post(controller.addStudent)
-  .patch(controller.updateStudent)
-  .delete(controller.deleteStudent);
+  .patch(controller.updateStudent);
 
+router
+  .route("/student/:id")
+  .get(controller.getStudentById)
+  .delete(controller.deleteStudent);
 module.exports = router;
+

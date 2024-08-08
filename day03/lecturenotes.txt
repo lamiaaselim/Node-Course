@@ -62,11 +62,11 @@ Routes :  requset data endpoints
 //1- url  Query String    url?id=2&name=xxx     => Don't effect in request url and respond result so we must ask how to handle this
      method : get,post, patch ,put , delete
 
-//3- http body
-     method: post, patch ,put , delete
-
 //2- url  Parameters   url/2/xxx   
     method : get,post, patch ,put , delete
+
+//3- http body
+     method: post, patch ,put , delete
 
 
 
